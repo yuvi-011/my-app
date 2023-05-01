@@ -26,10 +26,10 @@ node{
    }
    stage('Nexus Image Push'){
    withCredentials([string(credentialsId: 'nexusPass', variable: 'nexusPassword')]){
-   sh "docker login -u admin -p ${nexusPassword} 13.40.189.32:8083"
+   sh "docker login -u admin -p ${nexusPassword} 18.130.172.26:8083"
    }
-   sh "docker tag yuvarajeleven/myweb:0.0.2 13.40.189.32:8083/yuvi:1.0.0"
-   sh 'docker push 13.40.189.32:8083/yuvi:1.0.0'
+   sh "docker tag yuvarajeleven/myweb:0.0.2 18.130.172.26:8083/yuvi:1.0.0"
+   sh 'docker push 18.130.172.26:8083/yuvi:1.0.0'
    }
    stage('Remove Previous Container'){
 	try{
